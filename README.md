@@ -2,8 +2,6 @@
 
 An interactive and categorized Git command reference built with **React** and **Tailwind CSS** — designed for developers who want a quick, intuitive, and beautiful way to explore essential Git commands with usage examples.
 
-![Git Command Explorer Banner](./src/assets/images/git.jpg)
-
 ---
 
 ##  Features
