@@ -9,7 +9,7 @@ function Bookmarks() {
     setBookmarked(saved);
   }, []);
 
-  // Flatten all commands
+ 
   const allCommands = gitCategories.flatMap(cat => cat.commands);
   const bookmarkedCommands = allCommands.filter(cmd =>
     bookmarked.includes(cmd.name)

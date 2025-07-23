@@ -24,7 +24,7 @@ function FeedbackForm() {
       return;
     }
 
-    // Log and reset
+
     console.log('User Feedback:', { command: gitCommand, usage, comments });
     setSubmitted(true);
     setGitCommand('');
@@ -44,7 +44,7 @@ function FeedbackForm() {
 
   return (
     <>
-      {/* Floating Feedback Button */}
+     
       <button
         className="fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg transition duration-200"
         onClick={() => setIsOpen(true)}
@@ -53,7 +53,6 @@ function FeedbackForm() {
         <FaCommentDots className="text-xl" />
       </button>
 
-      {/* Feedback Modal */}
       {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-40 z-50 flex items-center justify-center">
           <div className="bg-white text-black p-6 rounded-xl shadow-lg w-[90%] max-w-md relative">

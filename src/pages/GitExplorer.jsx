@@ -13,25 +13,24 @@ function GitExplorer() {
   const [copiedCommand, setCopiedCommand] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // 🔖 Bookmarks stored in localStorage
+ 
   const [bookmarks, setBookmarks] = useState(() => {
     const saved = localStorage.getItem('bookmarkedCommands');
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Toggle category open/close
+
   const toggleCategory = (index) => {
     setOpenCategory((prev) => (prev === index ? null : index));
   };
 
-  // Handle copy to clipboard
   const handleCopy = (cmd) => {
     navigator.clipboard.writeText(cmd);
     setCopiedCommand(cmd);
     setTimeout(() => setCopiedCommand(null), 1500);
   };
 
-  // Toggle bookmark
+ 
   const toggleBookmark = (cmd) => {
     let updated;
     if (bookmarks.includes(cmd.name)) {
@@ -57,12 +56,12 @@ function GitExplorer() {
         />
       </div>
 
-      {/* Grid of Categories */}
+      
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {gitCategories.map((category, index) => {
           const isOpen = openCategory === index;
 
-          // Filter commands based on search query
+          
           const filtered = category.commands.filter(
             (cmd) =>
               cmd.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -74,7 +73,7 @@ function GitExplorer() {
           return (
             <div
               key={index}
-              className="self-start bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 
+              className="self-start bg-indigo-100  border border-pink-400 
               rounded-xl p-4 shadow-md transition-shadow duration-300 flex flex-col"
             >
               <div
@@ -87,7 +86,7 @@ function GitExplorer() {
                 {isOpen ? <FaChevronDown /> : <FaChevronRight />}
               </div>
 
-              {/* Expandable Command List */}
+            
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
                   isOpen ? 'mt-4 max-h-[1000px]' : 'max-h-0'
@@ -105,7 +104,7 @@ function GitExplorer() {
                         <p className="text-xs text-gray-600 dark:text-gray-400">{cmd.description}</p>
                       </div>
                       <div className="flex items-center gap-2 ml-2">
-                        {/* Copy button */}
+                        
                         <button
                           onClick={() => handleCopy(cmd.name)}
                           className="text-blue-500 dark:text-blue-400 text-lg transition-transform hover:scale-110"
@@ -118,7 +117,7 @@ function GitExplorer() {
                           )}
                         </button>
 
-                        {/* Bookmark toggle */}
+                       
                         <button
                           onClick={() => toggleBookmark(cmd)}
                           className="text-yellow-500 dark:text-yellow-400 text-lg transition-transform hover:scale-110"
