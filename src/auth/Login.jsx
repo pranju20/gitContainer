@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from './authContext';
+import git from '../assets/images/git.jpg';
 
 function Login() {
   const { login, signup } = useAuth();
@@ -24,6 +25,14 @@ function Login() {
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-80">
+        <h1 className="text-2xl font-bold text-blue-600 text-center mx-auto mb-4">
+          Git Command Explorer
+       </h1>
+        <img
+            src={git}
+            className="w-30 h-30 mx-auto rounded-full shadow-lg border-blue-400 border-4 hover:scale-105 transition-transform duration-300"
+            alt="Git logo"
+       />
         <h2 className="text-xl font-bold mb-4 text-center">
           {isSignup ? 'Sign Up' : 'Login'}
         </h2>

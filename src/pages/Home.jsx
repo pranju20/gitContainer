@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import git from '../assets/images/git.jpg';
-import { FaTerminal, FaLayerGroup, FaRegClipboard, FaCommentDots } from 'react-icons/fa';
+import { FaLayerGroup, FaRegClipboard, FaCommentDots } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 function Home() {
@@ -27,7 +27,6 @@ function Home() {
             to="/git"
             className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-colors"
           >
-            <FaTerminal />
             Explore Commands
           </Link>
         </div>

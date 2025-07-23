@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { FaHome, FaCodeBranch, FaBookmark } from 'react-icons/fa';
 import { FaBackward } from 'react-icons/fa6';
@@ -6,7 +6,6 @@ import { useAuth } from '../auth/authContext';
 
 
 function Header() {
-  const location = useLocation();
   const { user, logout } = useAuth();
 
   return (
@@ -16,7 +15,7 @@ function Header() {
          
             <FaBackward className="w-5 h-5 cursor-pointer"
               onClick={() => window.history.back()} />
-            Git Explorer
+            Git Command Explorer
           
         </div>
 
